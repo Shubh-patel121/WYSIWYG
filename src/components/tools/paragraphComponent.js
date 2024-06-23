@@ -1,16 +1,18 @@
-import React ,{useContext, useState } from "react";
+import React, { useContext, useState } from "react";
 import Button from "../reusable/button";
 import { AppSidebarContext } from "../../pages/page";
 
-const ParagraphComponent = ({id, left, top, remove}) => {
-    const [text, setText] = useState('Hey, Lets Click me and add your paragraph here !');
-    const { mode } = useContext(AppSidebarContext);
+const ParagraphComponent = ({ id, left, top, remove }) => {
+  const [text, setText] = useState(
+    "Hey, Lets Click me and add your paragraph here !"
+  );
+  const { mode } = useContext(AppSidebarContext);
 
-    return (
-      <div className="component-wrapper" style={{ left, top }}>
-        {mode === 'edit' ? (
-          <div>
-          <Button handleClick={remove} id={id}/>
+  return (
+    <div className="component-wrapper" style={{ left, top }}>
+      {mode === "edit" ? (
+        <div>
+          <Button handleClick={remove} id={id} />
           <p
             contentEditable
             suppressContentEditableWarning
@@ -19,13 +21,12 @@ const ParagraphComponent = ({id, left, top, remove}) => {
           >
             {text}
           </p>
-          </div>
-        ) : (
-          <p className="paragraph-component">{text}</p>
-        )}
-      </div>
-    );
-  };
-  
-  export default ParagraphComponent;
-  
+        </div>
+      ) : (
+        <p className="paragraph-component">{text}</p>
+      )}
+    </div>
+  );
+};
+
+export default ParagraphComponent;

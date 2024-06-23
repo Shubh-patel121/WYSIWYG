@@ -3,7 +3,6 @@ import { useDrop } from "react-dnd";
 import { renderComponent } from "../utils/utils-function";
 import { AppSidebarContext } from "../pages/page";
 
-
 const Canvas = () => {
   const [components, setComponents] = useState([]);
   const { backgroundColor } = useContext(AppSidebarContext);
@@ -23,7 +22,7 @@ const Canvas = () => {
     drop: (item, monitor) => {
       const offset = monitor.getClientOffset();
       const left = offset.x - 400; // Adjusting for sidebar width
-      const top = offset.y -100;
+      const top = offset.y - 100;
       addComponent(item.type, left, top);
     },
     collect: (monitor) => ({
@@ -44,7 +43,6 @@ const Canvas = () => {
           top: component.top,
           remove: removeComponent,
           id: component.id,
-        //   mode,
         };
         return (
           <div

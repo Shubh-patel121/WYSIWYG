@@ -6,3 +6,9 @@ export const toolbarItems = [
   { type: "paragraph", label: "Paragraph" },
   { type: "video", label: "Video" },
 ];
+
+export const buttonStyles = {
+    solid: `button-solid`,
+    outlined: `button-outlined`,
+    rounded: `button-rounded`,
+  };

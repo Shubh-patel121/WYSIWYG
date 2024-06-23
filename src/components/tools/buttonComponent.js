@@ -1,18 +1,13 @@
 import React, { useContext, useState } from "react";
 import Button from "../reusable/button";
 import { AppSidebarContext } from "../../pages/page";
+import { buttonStyles } from "../../utils/constant";
 
 const ButtonComponent = ({ left, top, remove, id }) => {
   const [text, setText] = useState("Click me");
   const [color, setColor] = useState("#000000");
   const [type, setType] = useState("solid");
   const { mode } = useContext(AppSidebarContext);
-
-  const buttonStyles = {
-    solid: `button-solid`,
-    outlined: `button-outlined`,
-    rounded: `button-rounded`,
-  };
 
   return (
     <div className="component-wrapper" style={{ left, top }}>
